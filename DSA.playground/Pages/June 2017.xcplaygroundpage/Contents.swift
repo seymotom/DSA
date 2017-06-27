@@ -88,3 +88,87 @@ func lengthOfLastWord(_ s: String) -> Int {
 
 
 lengthOfLastWord("  ")
+
+
+
+
+/*
+ Determine whether an integer is a palindrome. Do this without extra space.
+ 
+ click to show spoilers.
+ 
+ Some hints:
+ Could negative integers be palindromes? (ie, -1)
+ 
+ If you are thinking of converting the integer to string, note the restriction of using extra space.
+ 
+ You could also try reversing an integer. However, if you have solved the problem "Reverse Integer", you know that the reversed integer might overflow. How would you handle such case?
+ 
+ There is a more generic way of solving this problem.
+ */
+
+
+
+func isPalindrome(_ x: Int) -> Bool {
+    var x = x
+    if x < 0 || (x != 0 && x % 10 == 0) {
+        return false
+    }
+    var rev = 0
+    print("x: \(x)")
+    print("rev: \(rev)")
+    while x > rev {
+        rev = rev * 10 + x % 10
+        x = x / 10
+        print("x: \(x)")
+        print("rev: \(rev)")
+    }
+    return x == rev || x == rev / 10
+}
+
+isPalindrome(123457)
+print("")
+isPalindrome(0)
+print("")
+isPalindrome(8)
+
+UINT32_MAX
+
+
+
+/*
+ Reverse digits of an integer.
+ 
+ Example1: x = 123, return 321
+ Example2: x = -123, return -321
+ 
+ click to show spoilers.
+ 
+ Have you thought about this?
+ Here are some good questions to ask before coding. Bonus points for you if you have already thought through this!
+ 
+ If the integer's last digit is 0, what should the output be? ie, cases such as 10, 100.
+ 
+ Did you notice that the reversed integer might overflow? Assume the input is a 32-bit integer, then the reverse of 1000000003 overflows. How should you handle such cases?
+ 
+ For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
+ 
+ Note:
+ The input is assumed to be a 32-bit signed integer. Your function should return 0 when the reversed integer overflows.
+ */
+
+
+func reverse(_ x: Int) -> Int {
+    var x = x
+    var r = 0
+    
+    while x != 0 {
+        r = (10 * r) + (x % 10)
+        x /= 10
+    }
+    
+    return r > Int(INT32_MAX) || r < -Int(INT32_MAX) ? 0 : r
+}
+
+
+
