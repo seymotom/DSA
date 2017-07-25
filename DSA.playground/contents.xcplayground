@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios'>
+    <pages>
+        <page name='June 2017'/>
+        <page name='May 2017'/>
+        <page name='BitShifting'/>
+        <page name='April 2017'/>
+        <page name='March 2017'/>
+        <page name='February 2017'/>
+        <page name='January 2017'/>
+        <page name='Sorting (Merge and Quick)'/>
+        <page name='Recurson 2'/>
+        <page name='Recursion'/>
+        <page name='Binary Trees'/>
+        <page name='Trees 2'/>
+        <page name='Cameron Interview Qs 4-12'/>
+    </pages>
+</playground>
